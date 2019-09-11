@@ -7,7 +7,6 @@ import { ReactComponent as Logo } from '../../assets/crown.svg'
 import { auth } from '../../firebase/firebase.utils';
 
 const Header = ({ currentUser }) => {
-    console.log('----------->>>', currentUser.displayName)
     return (
         <div className='header'>
             <Link to="/" className='logo-container'>
@@ -18,10 +17,13 @@ const Header = ({ currentUser }) => {
                 <Link className='option' to="/shop">Shop</Link>
                 <Link className='option' to="/shop">contact</Link>
                 {
-                    currentUser ?
-                        (<div className='option' onClick={() => auth.signOut()}>Sign out</div>)
-                        :
-                        (<Link to='/signin'>Sign in</Link>)
+                    currentUser ? (
+                        <div className='option' onClick={() => auth.signOut()}>
+                            Sign out
+                        </div>
+                    ) : (
+                            <Link to='/signin'>Sign in</Link>
+                        )
                 }
             </div>
         </div>

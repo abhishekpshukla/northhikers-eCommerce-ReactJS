@@ -2,7 +2,6 @@ import React from 'react';
 import './cart-item.styles.scss';
 
 const CartItem = ({ item, quantity }) => {
-    console.log("sss", item)
     const { imageUrl, price, name } = item;
     return (
         <div className='cart-item'>

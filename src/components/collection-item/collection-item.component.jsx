@@ -7,7 +7,6 @@ import { addItem } from '../../redux/cart/cart.action';
 
 const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
-    console.log(name)
     return (
         <div className='collection-item'>
             <div
